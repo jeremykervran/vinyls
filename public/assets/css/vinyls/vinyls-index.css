@@ -1,0 +1,18 @@
+h1 {
+    margin: 40px 10px !important;
+}
+
+img {
+    height: 100px;
+    width: 100px;
+    border-radius: 5px 5px 5px;
+}
+
+.btn-rounded {
+    border-radius: 5px 5px 5px !important;
+    width: 120px;
+}
+
+.vinyls-add-btn {
+    margin: 40px 10px;
+}

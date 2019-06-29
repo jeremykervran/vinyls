@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Vinyl{% endblock %}
+
+{% block body %}
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.5.3/css/foundation.min.css">
+
+    <h1>Create new Vinyl</h1>
+
+    {{ include('vinyl/_form.html.twig') }}
+
+    <a href="{{ path('vinyl_index') }}"><button>back to list</button></a>
+{% endblock %}

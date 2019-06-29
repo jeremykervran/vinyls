@@ -1,0 +1,52 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Vinyls{% endblock %}
+
+{% block body %}
+
+    <link href="../../assets/css/vinyls/vinyls-index.css" rel="stylesheet">
+
+    {# <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> #}
+
+    <div class="top-vinyls">
+        <h1 style="float: left;">Vinyls</h1>
+        <a class="vinyls-add-btn" style="float:right;" href="{{ path('vinyl_new') }}"><button class="button success btn-rounded">Ajouter</button></a>
+    </div>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Titre</th>
+                <th>Artiste</th>
+                <th>Année</th>
+                <th>Genre</th>
+                <th>Pochette</th>
+                <th>Etat</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for vinyl in vinyls %}
+            <tr>
+                <td>{{ vinyl.id }}</td>
+                <td>{{ vinyl.title }}</td>
+                <td>{{ vinyl.artist }}</td>
+                <td>{{ vinyl.year }}</td>
+                <td>{{ vinyl.genre }}</td>
+                <td><img src="{{ vinyl.cover }}" alt="{{ vinyl.title|e }}'-cover"/></td>
+                <td>{{ vinyl.state }}</td>
+                <td>
+                    <a href="{{ path('vinyl_show', {'id': vinyl.id}) }}"><button class="hollow button primary btn-rounded">Voir</button></a>
+                    <a href="{{ path('vinyl_edit', {'id': vinyl.id}) }}"><button class="hollow button warning btn-rounded">Modifier</button></a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="8">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+{% endblock %}

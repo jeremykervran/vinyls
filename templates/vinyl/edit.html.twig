@@ -1,0 +1,19 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Vinyl{% endblock %}
+
+{% block body %}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.5.3/css/foundation.min.css">
+
+    <div class="row">
+        <div class="columns large-6 medium-6 small-6">
+            <h1>Edit Vinyl</h1>
+        </div>
+    </div>
+
+    {{ include('vinyl/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('vinyl_index') }}"><button class="hollow button">back to list</button></a>
+
+    {{ include('vinyl/_delete_form.html.twig') }}
+{% endblock %}
