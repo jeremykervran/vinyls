@@ -1,1 +1,1 @@
-"# vinyls" 
+# Vinyls
